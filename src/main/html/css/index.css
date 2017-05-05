@@ -15417,9 +15417,11 @@ Copyright (c) 2015 Daniel Eden
 
 header.site-header.site-header {
     z-index: 1000;
-    background: transparent;
+    background: #3e3e3e;
     font-size: 14px;
     position: static;
+    padding-top:0px;
+    padding-bottom:0px;
 }
 header.site-header.site-header.header-fixed {
     background: rgba(255,255,255,0.8);
@@ -15470,13 +15472,13 @@ header.site-header.site-header nav .navbar-brand {
     width: 120px;
 }
 header.site-header.site-header nav .navbar-brand a {
-    background: url("../images/senodio.png") center left no-repeat;
+    background: url("../images/underwriteme.png") center left no-repeat;
     /*background-size: 76%;*/
-    width: 130px;
+    width: 165px;
     height: 40px;
     display: block;
     margin-top: 5px;
-    background-size: 48%;
+    background-size: 100%;
 }
 header.site-header.site-header nav .navbar-brand img {
     position: relative;
@@ -15904,12 +15906,12 @@ a.btn.btn-danger {
 }
 .btn.btn-primary,
 a.btn.btn-primary {
-    background-color: #44c7f4;
+    background-color: #3e3e3e;
     border-color: transparent;
 }
 .btn.btn-primary:hover,
 a.btn.btn-primary:hover {
-    background-color: #0c9dce;
+    background-color: #252525;
 }
 .btn:active,
 a.btn:active {
@@ -16042,7 +16044,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-family: "proxima-nova", "Helvetica Neue", sans-serif;
-    color: #4d4d4d;
+    color: #333;
 }
 h1,
 h2,
@@ -17428,5 +17430,15 @@ li.L9 {
 @media screen and (max-width: 992px) {
     .zopim {
         display: none;
+    }
+}
+
+.swagger-section h2.operation-title {
+    color: #f68026;
+}
+
+@media (min-width: 992px) {
+    .swagger-section .sticky-nav [data-navigator] .item[data-selected] {
+        background: #FBB986;
     }
 }
