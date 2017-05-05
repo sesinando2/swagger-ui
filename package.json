@@ -49,6 +49,6 @@
     "less": "^2.4.0",
     "mocha": "^2.1.0",
     "selenium-webdriver": "^2.45.0",
-    "swagger-client": "git+https://github.com/sesinando2/swagger-js.git#feature\/do-not-include-non-required-without-examples-in-json"
+    "swagger-client": "git+https://github.com/sesinando2/swagger-js.git#feature\/fix-schema-markup-for-swagger-ui"
   }
 }
