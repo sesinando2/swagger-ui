@@ -1,0 +1,22 @@
+title: Decision
+type: object
+properties:
+  type:
+    description: Decision type
+    $ref: '../swagger.yml#/definitions/DecisionType'
+  immediateCover:
+    type: boolean
+    description: Flag to indicate whether cover is immediately available.
+  nonIndicative:
+    type: boolean
+    description: Flag to indicate whether this decision is non indicative.
+  details:
+    type: array
+    description: Decision details. It consists of Product Component Decisions per Customer.
+    items:
+      $ref: '../swagger.yml#/definitions/CustomerDecision'
+required:
+- type
+- immediateCover
+- nonIndicative
+- details

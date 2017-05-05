@@ -1,0 +1,59 @@
+get:
+  description: >-
+    Operations on Advised Sale Declaration associated with Application.
+
+    Activation will not be possible without giving an answer to this Declaration.
+  summary: Retrieve Advised Sale Declaration
+  tags:
+  - Legals
+  operationId: Retrieve Advised Sale Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/DeclarationResponse'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on Advised Sale Declaration associated with Application.
+
+    Activation will not be possible without giving an answer to this Declaration.
+  summary: Update Advised Sale Declaration
+  tags:
+  - Legals
+  operationId: Update Advised Sale Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/DeclarationRequest'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Declaration'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

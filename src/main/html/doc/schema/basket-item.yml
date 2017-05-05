@@ -1,0 +1,19 @@
+title: BasketItem
+type: object
+properties:
+  id:
+    type: string
+  provider:
+    type: string
+  decision:
+    $ref: '../swagger.yml#/definitions/BasketDecision'
+  product:
+    $ref: '../swagger.yml#/definitions/BasketProduct'
+  quote:
+    $ref: '../swagger.yml#/definitions/BasketQuote'
+required:
+- id
+- provider
+- decision
+- product
+- quote

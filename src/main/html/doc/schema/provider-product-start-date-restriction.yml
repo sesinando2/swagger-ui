@@ -1,0 +1,23 @@
+title: ProviderProductStartDateRestriction
+type: object
+properties:
+  refersTo:
+    type: string
+  provider:
+    type: string
+  productId:
+    type: string
+  date:
+    $ref: '../swagger.yml#/definitions/Restriction'
+    example:
+      required: true
+  basis:
+    $ref: '../swagger.yml#/definitions/Restriction'
+    example:
+      required: true
+required:
+- refersTo
+- provider
+- productId
+- date
+- basis

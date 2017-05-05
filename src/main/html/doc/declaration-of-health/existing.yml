@@ -1,0 +1,64 @@
+get:
+  description: Operations on existing Declaration-of-Health associated with Application.
+  summary: Retrieve Declaration-of-Health
+  tags:
+  - Declaration-of-Health
+  operationId: Retrieve Declaration-of-Health
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/DeclarationOfHealth'
+    404:
+      description: 'Request Declaration-of-Health for application with no expired Comparison Items'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: Operations on existing Declaration-of-Health associated with Application.
+  summary: Confirm Declaration-of-Health
+  tags:
+  - Declaration-of-Health
+  operationId: Confirm Declaration-of-Health
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      title: ConfirmDeclarationOfHealthRequest
+      type: object
+      properties:
+        answer:
+          type: boolean
+      required:
+      - answer
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/DeclarationOfHealth'
+    404:
+      description: 'Request Confirm Declaration-of-Health for Application with no expired quotes'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

@@ -1,0 +1,28 @@
+post:
+  description: >-
+    Creating new Application based on sent Customers and Products JSON data.
+  summary: Create new Application
+  tags:
+  - Application
+  operationId: Create new Application
+  produces:
+  - application/json
+  parameters:
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/NewApplicationRequest'
+  responses:
+    201:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Application'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

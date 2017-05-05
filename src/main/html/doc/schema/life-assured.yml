@@ -1,0 +1,8 @@
+title: LifeAssured
+type: object
+properties:
+  refersTo:
+    type: string
+    description: Reference to ID of the Customer. Object with the same value must be available in customers list.
+required:
+- refersTo

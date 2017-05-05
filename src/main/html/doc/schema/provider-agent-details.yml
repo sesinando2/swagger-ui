@@ -1,0 +1,19 @@
+title: ProviderAgentDetails
+type: object
+properties:
+  commissionStyle:
+    type: string
+    description: The commission style
+    enum:
+    - INDEMNITY
+    - NON_INDEMNITY
+  providerId:
+    type: string
+    description: The ID of the provider, e.g. TRUE_POTENTIAL.
+  agentNumber:
+    type: string
+    description: The agent number.
+required:
+- commissionStyle
+- providerId
+- agentNumber

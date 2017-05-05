@@ -1,0 +1,33 @@
+post:
+  description: >-
+    Creating new Product based on sent JSON data.
+  summary: Create new Product
+  tags:
+  - Product
+  operationId: Create new Product
+  produces:
+  - application/json
+  parameters:
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/ProductRequest'
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: ''
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Product'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

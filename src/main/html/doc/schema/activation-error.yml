@@ -1,0 +1,11 @@
+title: ActivationError
+type: object
+properties:
+  reason:
+    type: string
+    description: Reason of the error.
+  description:
+    type: string
+    description: Detailed description of the erro
+required:
+- reason

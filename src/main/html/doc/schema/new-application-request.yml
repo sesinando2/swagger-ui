@@ -1,0 +1,28 @@
+title: NewApplicationRequest
+type: object
+properties:
+  customers:
+    description: 'List of Customers for the Application.'
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/CustomerRequest'
+  products:
+    description: 'List of Products for the Application.'
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/ProductRequest'
+  owner:
+    description: Owner of the application. If not specified, the authenticated user is used.
+    type: string
+  quoteEffectiveDate:
+    type: string
+    description: 'The quote effective date. ISO 8601 date format (YYYY-MM-DD) required. Example: 1980-01-01.'
+  originatorId:
+    type: string
+    description: The id of the portal the application originated from.
+  overrides:
+    description: Placeholder to specify overrides for the application, that are used on quote and activation messages. If not specified, messages will be built based on the authenticated user (e.g., username, firm name, frn).
+    $ref: '../swagger.yml#/definitions/Overrides'
+required:
+- customers
+- products

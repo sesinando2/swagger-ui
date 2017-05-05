@@ -1,0 +1,25 @@
+title: Application
+type: object
+properties:
+  id:
+    type: string
+  customers:
+    description: 'List of Customers for the Application.'
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/Customer'
+  products:
+    description: 'List of Products for the Application.'
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/Product'
+  owner:
+    description: Owner of the application. If not specified, the authenticated user is used.
+    type: string
+  paymentBasis:
+    $ref: '../swagger.yml#/definitions/PaymentBasis'
+required:
+- id
+- customers
+- products
+- paymentBasis

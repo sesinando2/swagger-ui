@@ -1,0 +1,9 @@
+title: BankAccountRestriction
+type: object
+properties:
+  holders:
+    $ref: '../swagger.yml#/definitions/Restriction'
+    example:
+      max: 2
+required:
+- holders

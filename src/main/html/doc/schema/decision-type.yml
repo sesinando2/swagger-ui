@@ -1,0 +1,10 @@
+title: DecisionType
+type: string
+enum:
+- UNKNOWN
+- STANDARD
+- NON_STANDARD
+- EVIDENCE_REQUIRED
+- REFER
+- POSTPONE
+- DECLINE

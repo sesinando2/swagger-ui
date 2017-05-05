@@ -1,0 +1,44 @@
+title: Quote
+type: object
+properties:
+  state:
+    description: State of the quote request
+    $ref: '../swagger.yml#/definitions/QuoteState'
+  date:
+    type: string
+    description: 'Date and time quote request was made. ISO 8601 date format (YYYY-MM-DDThh:mm:ss.SSS). Example: 2015-04-11T12:33:12.321.'
+  expiryDate:
+    type: string
+    description: 'Date the quote expires. ISO 8601 date format (YYYY-MM-DD). Example: 2015-04-11.'
+  expired:
+    type: boolean
+    description: Flag to mark whether this quote has expired.
+  notes:
+    type: array
+    description: Notes relating to a quote.
+    items:
+      $ref: '../swagger.yml#/definitions/Note'
+  variation:
+    type: array
+    description: Variations relating to a quote.
+    items:
+      $ref: '../swagger.yml#/definitions/Variation'
+  premium:
+    description: Quote premium. Can be a fixed or ranged value.
+    $ref: '../swagger.yml#/definitions/Premium'
+  sumAssured:
+    type: number
+    description: Quote sum assured.
+  anonymousQuote:
+    type: boolean
+    description: Indicates if the quote was undertaken by a user without an agent id for the Provider.
+  errors:
+    type: array
+    description: List of errors in the quote response
+    items:
+      type: string
+  commission:
+    description: Commission value.
+    $ref: '../swagger.yml#/definitions/Commission'
+required:
+- state

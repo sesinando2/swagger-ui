@@ -1,0 +1,70 @@
+get:
+  description: >-
+    Operations on Third Party Marketing Preference associated with Application Customer.
+
+    Activation will not be possible without giving an answer this Marketing Preference.
+  summary: Retrieve Third Party Marketing Preference
+  tags:
+  - Legals
+  operationId: Retrieve Third Party Marketing Preference
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/MarketingPreferenceResponse'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on Third Party Marketing Preference associated with Application Customer.
+
+    Activation will not be possible without giving an answer this Marketing Preference.
+  summary: Update Third Party Marketing Preference
+  tags:
+  - Legals
+  operationId: Update Third Party Marketing Preference
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/MarketingPreferenceRequest'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/MarketingPreference'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

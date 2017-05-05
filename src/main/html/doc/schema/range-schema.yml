@@ -1,0 +1,12 @@
+title: RangeSchema
+type: object
+properties:
+  from:
+    type: number
+    description: Start of the range.
+  to:
+    type: number
+    description: End of the range.
+required:
+- from
+- to

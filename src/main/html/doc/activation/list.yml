@@ -1,0 +1,54 @@
+get:
+  description: >-
+    Operations on existing Activation associated with Application.
+  summary: Retrieve Activation
+  tags:
+  - Activation
+  operationId: Retrieve Activation
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Activation'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on existing Activation associated with Application.
+  summary: Request Activation
+  tags:
+  - Activation
+  operationId: Request Activation
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Activation'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+    404:
+      description: Request Activation for not existing Application.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

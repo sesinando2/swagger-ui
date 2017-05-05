@@ -1,0 +1,12 @@
+title: RangeOptions
+type: object
+properties:
+  contributor:
+    description: Information which underwriting Question contributed to Decision
+    $ref: '../swagger.yml#/definitions/Contributor'
+  value:
+    description: Contribution range
+    $ref: '../swagger.yml#/definitions/RangeSchema'
+required:
+- contributor
+- value

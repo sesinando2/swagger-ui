@@ -1,0 +1,26 @@
+get:
+  description: >-
+    Operations on Client Declaration associated with Application.
+
+    Answer does not have to be provided for this Declaration.
+  summary: Retrieve Client Declaration
+  tags:
+  - Legals
+  operationId: Retrieve Client Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/NonAnswerableDeclaration'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

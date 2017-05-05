@@ -1,0 +1,14 @@
+title: Basket
+type: object
+properties:
+  items:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/BasketItem'
+  total:
+    $ref: '../swagger.yml#/definitions/BasketTotal'
+  paymentBasis:
+    $ref: '../swagger.yml#/definitions/PaymentBasis'
+required:
+- items
+- paymentBasis

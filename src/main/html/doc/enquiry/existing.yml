@@ -1,0 +1,88 @@
+get:
+  description: >-
+    Operations on existing Enquiry associated with Application.
+
+    In order to read or update Enquiry a Pre-Declaration has to be confirmed.
+  summary: Retrieve Enquiry
+  tags:
+  - Enquiry
+  operationId: Retrieve Enquiry
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: enquiryId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Enquiry associated with Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Enquiry'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on existing Enquiry associated with Application.
+
+    In order to read or update Enquiry a Pre-Declaration has to be confirmed.
+  summary: Update Enquiry
+  tags:
+  - Enquiry
+  operationId: Update Enquiry
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: enquiryId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Enquiry associated with Application.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      title: UpdateEnquiryRequest
+      type: object
+      properties:
+        HEIGHT:
+          type: string
+        WEIGHT_MALE:
+          type: string
+        NON_SMOKER_STATUS:
+          type: string
+        OCCUPATION:
+          type: string
+        FAMILY_HISTORY_LIFE:
+          type: string
+      required:
+      - HEIGHT
+      - WEIGHT_MALE
+      - NON_SMOKER_STATUS
+      - OCCUPATION
+      - FAMILY_HISTORY_LIFE
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Enquiry'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

@@ -1,0 +1,8 @@
+title: DeclarationResponse
+type: object
+properties:
+  question:
+    type: string
+    description: Declaration question text.
+required:
+- question

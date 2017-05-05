@@ -1,0 +1,12 @@
+title: ProviderPaymentDayRestriction
+type: object
+properties:
+  provider:
+    type: string
+  dayOfMonth:
+    $ref: '../swagger.yml#definitions/Restriction'
+    example:
+      required: true
+required:
+- provider
+- dayOfMonth

@@ -1,0 +1,12 @@
+title: BasketTotalPremium
+type: object
+properties:
+  from:
+    type: number
+    description: Lower bound of the premium value.
+  to:
+    type: number
+    description: Upper bound of the premium value.
+required:
+- from
+- to

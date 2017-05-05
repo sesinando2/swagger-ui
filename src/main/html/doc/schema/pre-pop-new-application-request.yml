@@ -1,0 +1,34 @@
+title: PrePopulateNewApplicationRequest
+type: object
+properties:
+  customers:
+    type: array
+    description: List of Customers for the Application.
+    items:
+      $ref: '../swagger.yml#/definitions/PrePopCustomer'
+  products:
+    type: array
+    description: List of Products for the Application.
+    items:
+      $ref: '../swagger.yml#/definitions/PrePopProduct'
+  paymentDetails:
+    description: Payment details.
+    $ref: '../swagger.yml#/definitions/Payment'
+  owner:
+    type: string
+    description: Owner of the application.
+  frn:
+    type: string
+    description: Firm reference number of the firm that owns the application. Must be provided if no specific individual owner is provided. If both owner and frn are present then ower takes precedence and frn is ignored.
+  adviserReferenceNumber:
+    type: string
+    description: Firm reference number of the application. If either (owner and frn) are provided owner take precedence.
+  originatorId:
+    type: string
+    description: Portal that the application originated from.
+  quoteEffectiveDate:
+    type: string
+    description: 'The quote effective date. Must match ISO 8601 date format (YYYY-MM-DD) e.g: 1980-01-01.'
+required:
+- customers
+- products

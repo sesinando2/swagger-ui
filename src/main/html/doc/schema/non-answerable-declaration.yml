@@ -1,0 +1,8 @@
+title: NonAnswerableDeclaration
+type: object
+properties:
+  text:
+    type: string
+    description: HTML formatted Declaration text.
+required:
+- text

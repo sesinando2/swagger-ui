@@ -1,0 +1,61 @@
+post:
+  description: Operations on Basket Items associated with Application.
+  summary: Add Item to Basket
+  tags:
+  - Basket
+  operationId: Add Item to Basket
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      title: Add Item To Basket Request
+      type: object
+      properties:
+        id:
+          type: string
+          example: 'plr-eae35b32-4841-4620-aed4-d06cf1cf8057'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Basket'
+    404:
+      description: 'Adding Item to non-existing Basket'
+      schema: {}
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+delete:
+  description: Operations on Basket Items associated with Application.
+  summary: Remove All Items from Basket
+  tags:
+  - Basket
+  operationId: Remove All Items from Basket
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        type: object
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

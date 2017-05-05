@@ -1,0 +1,25 @@
+title: ComparisonLifeAssuredRequest
+type: object
+properties:
+  name:
+    type: string
+    description: Customer name.
+  surname:
+    type: string
+    description: Customer surname.
+  refersTo:
+    type: string
+    description: Reference to ID of the Customer. Object with the same value must be available in customers list.
+  waiverOfPremium:
+    type: boolean
+    description: Flag to mark waiver of premium for Customer.
+  determinesCeaseAge:
+    type: boolean
+    description: Flag to mark which customer determines the cease age.
+  totalPermanentDisability:
+    type: boolean
+    description: Flag to mark total permanent disability for Customer.
+required:
+- name
+- surname
+- refersTo

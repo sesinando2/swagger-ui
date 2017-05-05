@@ -1,0 +1,12 @@
+title: Details
+type: object
+properties:
+  keyFacts:
+    type: string
+    description: Key Facts document link.
+  termsAndConditions:
+    type: string
+    description: Terms & Conditions document link.
+  shortDescription:
+    type: string
+    description: "Product description (may differ on the basis of logged-in user's firm distribution channel)."

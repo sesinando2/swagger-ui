@@ -1,0 +1,58 @@
+get:
+  description: >-
+    Operations on Money Laundering Checked Declaration associated with Application.
+
+    Activation will not be possible without giving an answer to this Declaration.
+  summary: Retrieve Money Laundering Checked Declaration
+  tags:
+  - Legals
+  operationId: Retrieve Money Laundering Checked Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/DeclarationResponse'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on Money Laundering Checked Declaration associated with Application.
+
+    Activation will not be possible without giving an answer to this Declaration.
+  summary: Update Money Laundering Checked Declaration
+  tags:
+  - Legals
+  operationId: Update Money Laundering Checked Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '../swagger.yml#/definitions/DeclarationRequest'
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/Declaration'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

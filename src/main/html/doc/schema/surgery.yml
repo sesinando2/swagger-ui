@@ -1,0 +1,20 @@
+title: Surgery
+type: object
+properties:
+  name:
+    type: string
+    description: Surgery's name.
+  contactDetails:
+    description: Surgery contact details.
+    $ref: '../swagger.yml#/definitions/ContactDetails'
+    example:
+      telephoneNumber: '01234 567890'
+      address:
+        line1: "21 King's Road"
+        line2: Queen Avenue
+        town: London
+        county: London
+        postcode: "AB1 2CD"
+required:
+- name
+- contactDetails

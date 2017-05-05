@@ -1,0 +1,9 @@
+title: Rating
+type: object
+properties:
+  value:
+    type: number
+    description: Numerical value of the rating. Possible value is an integer value between 0 and 5.
+  description:
+    type: string
+    description: HTML formatted description text of the rating.

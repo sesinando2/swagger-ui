@@ -1,0 +1,5 @@
+title: Gender
+type: string
+enum:
+- FEMALE
+- MALE

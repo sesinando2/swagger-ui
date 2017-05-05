@@ -1,0 +1,442 @@
+swagger: 2.0
+info:
+  version: 1.0
+  title: UnderwriteMe API
+  description: >-
+    __UnderwriteMe API__ is a set of REST endpoints which allows you to interact with underwriting workflow. Workflow consist of following components:
+
+    - __Authentication__ - Receiving access token after giving valid authentication details.
+
+    - __Application__ - Creating Application which contains basic information about Customers and Products they apply for.
+
+    - __Customer__ - Managing Customer for Application. Provides CRUD operations.
+
+    - __Product__ - Managing Product for Application. Provides CRUD operations.
+
+    - __Pre-Declaration__ - Confirming Enquiry Pre-Declaration in order start filling in Enquiry.
+
+    - __Enquiry__ - Filling in Customer Enquiry.
+
+    - __Question__ - Retrieving information about Enquiry Question like its Definition, available Option List and partial Option Lookup.
+
+    - __Post-Declaration__ - Confirming Application Post-Declaration in order to finish filling in Customer Enquiries.
+
+    - __Comparison__ - Requesting and retrieving Decisions and Quotes for Products.
+
+    - __Basket__ - Choosing Products for Activation.
+
+    - __Declaration-of-Health__ - Confirming that the health disclosures have not changed for a Customer with expired Comparison Items.
+
+    - __Doctor__ - Filling in Doctor details if Provider Products require that.
+
+    - __Payment__ - Filling in Payment details for Provider Products.
+
+    - __Legals__ - Filling in and retrieving Legal declarations.
+
+    - __Activation__ - Requesting and retrieving Activation state of selected Products.
+
+    - __Document__ - Requesting and retrieving documents.
+
+    - __Message__ - Retrieve all i18n messages.
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+basePath: /underwriteme/api
+schemes:
+- http
+- https
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  ApiKeyAuth:
+    type: 'apiKey'
+    in: 'header'
+    name: 'Authorization'
+security:
+  ApiKeyAuth: []
+paths:
+  /auth:
+    security: []
+    $ref: ./authentication/authenticate.yml
+  /application:
+    $ref: ./application/new.yml
+  /application/pre-populate:
+    $ref: ./application/pre-pop.yml
+  /application/{id}:
+    $ref: ./application/existing.yml
+  /application/{id}/payment-basis:
+    $ref: ./application/payment-basis.yml
+  /application/{id}/customer:
+    $ref: ./customer/new.yml
+  /application/{id}/customer/:
+    $ref: ./customer/list.yml
+  /application/{id}/customer/{customerId}:
+    $ref: ./customer/existing.yml
+  /application/{id}/product:
+    $ref: ./product/new.yml
+  /application/{id}/product/:
+    $ref: ./product/list.yml
+  /application/{id}/product/{productId}:
+    $ref: ./product/existing.yml
+  /application/{applicationId}/enquiry/{enquiryId}/pre-declaration:
+    $ref: ./pre-declaration/existing.yml
+  /application/{applicationId}/enquiry/{enquiryId}/pre-declaration/teleinterview:
+    $ref: ./pre-declaration/teleinterview.yml
+  /application/{applicationId}/enquiry/{enquiryId}:
+    $ref: ./enquiry/existing.yml
+  /enquiry/question/{branch}/{tag}/{name}:
+    $ref: ./question/definition.yml
+  /enquiry/option-list/{branch}/{tag}/{name}:
+    $ref: ./question/option-list.yml
+  /enquiry/question-option-lookup/{branch}/{tag}/{name}/{stem}:
+    $ref: ./question/option-lookup.yml
+  /application/{applicationId}/post-declaration:
+    $ref: ./post-declaration/existing.yml
+  /application/{applicationId}/comparison:
+    $ref: ./comparison/list.yml
+  /application/{applicationId}/comparison/item/{itemId}:
+    $ref: ./comparison/item.yml
+  /application/{applicationId}/basket:
+    $ref: ./basket/list.yml
+  /application/{applicationId}/basket/item:
+    $ref: ./basket/items.yml
+  /application/{applicationId}/basket/item/{itemId}:
+    $ref: ./basket/item.yml
+  /api/application/{applicationId}/basket/document:
+    $ref: ./basket/document.yml
+  /application/{applicationId}/declaration/declaration-of-health:
+    $ref: ./declaration-of-health/existing.yml
+  /application/{applicationId}/customer/{customerId}/doctor:
+    $ref: ./doctor/existing.yml
+  /application/{id}/payment/restriction:
+    $ref: ./payment/restriction.yml
+  /application/{id}/payment:
+    $ref: ./payment/existing.yml
+  /application/{applicationId}/declaration/advised-sale:
+    $ref: ./legals/advised-sale-declaration.yml
+  /application/{applicationId}/declaration/money-laundering-checked:
+    $ref: ./legals/money-laundering-checked-declaration.yml
+  /application/{applicationId}/declaration/adviser:
+    $ref: ./legals/adviser-declaration.yml
+  /application/{applicationId}/declaration/client:
+    $ref: ./legals/client-declaration.yml
+  /application/{applicationId}/customer/{customerId}/marketing-preference/insurer:
+    $ref: ./legals/insurer-marketing-preference.yml
+  /application/{applicationId}/customer/{customerId}/marketing-preference/third-party:
+    $ref: ./legals/third-party-marketing-preference.yml
+  /api/application/{applicationId}/customer/{customerId}/legal-confirmation/provider/{providerId}':
+    $ref: ./legals/provider-legal-confirmation.yml
+  /api/application/{applicationId}/activation:
+    $ref: ./activation/list.yml
+  /api/application/{applicationId}/activation/plan:
+    $ref: ./activation/plan.yml
+  /api/application/{applicationId}/document/{documentId}:
+    $ref: ./document/existing.yml
+  /message:
+    $ref: ./message/list.yml
+definitions:
+
+  Address:
+    $ref: ./schema/address.yml
+
+  ContactDetails:
+    $ref: ./schema/contact-details.yml
+
+  Surgery:
+    $ref: ./schema/surgery.yml
+
+  Doctor:
+    $ref: ./schema/doctor.yml
+
+  Gender:
+    $ref: ./schema/gender.yml
+
+  CustomerRequest:
+    $ref: ./schema/customer-request.yml
+
+  Customer:
+    $ref: ./schema/customer.yml
+
+  LifeAssuredRequest:
+    $ref: ./schema/life-assured-request.yml
+
+  LifeAssured:
+    $ref: ./schema/life-assured.yml
+
+  CommissionSacrifice:
+    $ref: ./schema/commission-sacrifice.yml
+
+  ProductType:
+    $ref: ./schema/product-type.yml
+
+  ProductRequest:
+    $ref: ./schema/product-request.yml
+
+  Product:
+    $ref: ./schema/product.yml
+
+  ProviderAgentDetails:
+    $ref: ./schema/provider-agent-details.yml
+
+  Firm:
+    $ref: ./schema/firm.yml
+
+  UserOverrides:
+    $ref: ./schema/user-overrides.yml
+
+  Overrides:
+    $ref: ./schema/overrides.yml
+
+  NewApplicationRequest:
+    $ref: ./schema/new-application-request.yml
+
+  PaymentBasis:
+    $ref: ./schema/payment-basis.yml
+
+  Application:
+    $ref: ./schema/application.yml
+
+  PaymentBasisWrapper:
+    $ref: ./schema/payment-basis-wrapper.yml
+
+  PrePopCustomer:
+    $ref: ./schema/pre-pop-customer.yml
+
+  PrePopProduct:
+    $ref: ./schema/pre-pop-product.yml
+
+  PrePopulateNewApplicationRequest:
+    $ref: ./schema/pre-pop-new-application-request.yml
+
+  BankAccountHolder:
+    $ref: ./schema/bank-account-holder.yml
+
+  BankAccount:
+    $ref: ./schema/bank-account.yml
+
+  ProviderPaymentDay:
+    $ref: ./schema/provider-payment-day.yml
+
+  ProviderProductStartDate:
+    $ref: ./schema/provider-product-start-date.yml
+
+  Payment:
+    $ref: ./schema/payment.yml
+
+  PreDeclaration:
+    $ref: ./schema/pre-declaration.yml
+
+  Teleinterview:
+    $ref: ./schema/teleinterview.yml
+
+  Question:
+    $ref: ./schema/question.yml
+
+  EnquiryLine:
+    $ref: ./schema/enquiry-line.yml
+
+  Section:
+    $ref: ./schema/section.yml
+
+  Enquiry:
+    $ref: ./schema/enquiry.yml
+
+  QuestionDefinition:
+    $ref: ./schema/question-definition.yml
+
+  Option:
+    $ref: ./schema/option.yml
+
+  PostDeclaration:
+    $ref: ./schema/post-declaration.yml
+
+  DecisionType:
+    $ref: ./schema/decision-type.yml
+
+  Contributor:
+    $ref: ./schema/contributor.yml
+
+  Duration:
+    $ref: ./schema/duration.yml
+
+  DurationOptions:
+    $ref: ./schema/duration-options.yml
+
+  CodeAndDescription:
+    $ref: ./schema/code-and-description.yml
+
+  ExclusionOptions:
+    $ref: ./schema/exclusion-options.yml
+
+  RangeSchema:
+    $ref: ./schema/range-schema.yml
+
+  RangeOptions:
+    $ref: ./schema/range-options.yml
+
+  ComponentDecision:
+    $ref: ./schema/component-decision.yml
+
+  DecisionCustomer:
+    $ref: ./schema/decision-customer.yml
+
+  CustomerDecision:
+    $ref: ./schema/customer-decision.yml
+
+  Decision:
+    $ref: ./schema/decision.yml
+
+  QuoteState:
+    $ref: ./schema/quote-state.yml
+
+  Note:
+    $ref: ./schema/note.yml
+
+  Variation:
+    $ref: ./schema/variation.yml
+
+  UnloadedPremium:
+    $ref: ./schema/unloaded-premium.yml
+
+  LifePremium:
+    $ref: ./schema/life-premium.yml
+
+  Premium:
+    $ref: ./schema/premium.yml
+
+  ComparisonCommissionSacrifice:
+    $ref: ./schema/comparison-commission-sacrifice.yml
+
+  Commission:
+    $ref: ./schema/commission.yml
+
+  Quote:
+    $ref: ./schema/quote.yml
+
+  Rating:
+    $ref: ./schema/rating.yml
+
+  Details:
+    $ref: ./schema/details.yml
+
+  ComparisonLifeAssuredRequest:
+    $ref: ./schema/comparison-life-assured-request.yml
+
+  ComparisonLifeAssured:
+    $ref: ./schema/comparison-life-assured.yml
+
+  ComparisonProduct:
+    $ref: ./schema/comparison-product.yml
+
+  ComparisonItem:
+    $ref: ./schema/comparison-item.yml
+
+  Comparison:
+    $ref: ./schema/comparison.yml
+
+  BasketProduct:
+    $ref: ./schema/basket-product.yml
+
+  BasketLifePremium:
+    $ref: ./schema/basket-lifetime-premium.yml
+
+  BasketPremium:
+    $ref: ./schema/basket-premium.yml
+
+  BasketQuote:
+    $ref: ./schema/basket-quote.yml
+
+  BasketDecision:
+    $ref: ./schema/basket-decision.yml
+
+  BasketItem:
+    $ref: ./schema/basket-item.yml
+
+  BasketTotalPremium:
+    $ref: ./schema/basket-total-premium.yml
+
+  BasketCommission:
+    $ref: ./schema/basket-commission.yml
+
+  BasketTotal:
+    $ref: ./schema/basket-total.yml
+
+  Basket:
+    $ref: ./schema/basket.yml
+
+  Document:
+    $ref: ./schema/document.yml
+
+  DeclarationOfHealth:
+    $ref: ./schema/declaration-of-health.yml
+
+  Restriction:
+    $ref: ./schema/restriction.yml
+
+  BankAccountRestriction:
+    $ref: ./schema/bank-account-restriction.yml
+
+  ProviderProductStartDateRestriction:
+    $ref: ./schema/provider-product-start-date-restriction.yml
+
+  ProviderPaymentDayRestriction:
+    $ref: ./schema/provider-payment-day-restriction.yml
+
+  PaymentRestriction:
+    $ref: ./schema/payment-restriction.yml
+
+  DeclarationRequest:
+    $ref: ./schema/declaration-request.yml
+
+  DeclarationResponse:
+    $ref: ./schema/declaration-response.yml
+
+  Declaration:
+    $ref: ./schema/declaration.yml
+
+  NonAnswerableDeclaration:
+    $ref: ./schema/non-answerable-declaration.yml
+
+  MarketingPreferenceRequest:
+    $ref: ./schema/marketing-preference-request.yml
+
+  MarketingPreferenceResponse:
+    $ref: ./schema/marketing-preference-response.yml
+
+  MarketingPreference:
+    $ref: ./schema/marketing-preference.yml
+
+  ProviderLegalConfirmationRequest:
+    $ref: ./schema/provider-legal-confirmation-request.yml
+
+  ProviderLegalConfirmationResponse:
+    $ref: ./schema/provider-legal-confirmation-response.yml
+
+  ProviderLegalConfirmation:
+    $ref: ./schema/provider-legal-confirmation.yml
+
+  ActivationError:
+    $ref: ./schema/activation-error.yml
+
+  ActivationStatus:
+    $ref: ./schema/activation-status.yml
+
+  ProviderInfo:
+    $ref: ./schema/provider-info.yml
+
+  ActivationItem:
+    $ref: ./schema/activation-item.yml
+
+  Activation:
+    $ref: ./schema/activation.yml
+
+  Plan:
+    $ref: ./schema/plan.yml
+
+  DocumentContent:
+    $ref: ./schema/document-content.yml
+
+  Message:
+    $ref: ./schema/message.yml

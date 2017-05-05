@@ -1,0 +1,25 @@
+get:
+  description: Payment Restriction for Application based on Provider Products available in the Basket.
+  summary: Retrieve Payment Restriction
+  tags:
+  - Payment
+  operationId: Retrieve Payment Restriction
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/PaymentRestriction'
+    404:
+      description: 'Request Payment Restriction for non existing Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

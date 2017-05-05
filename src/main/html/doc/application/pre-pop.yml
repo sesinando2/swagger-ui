@@ -1,0 +1,25 @@
+post:
+  description: >-
+    Creating a new Application with relaxed validation to allow for portal handover.
+  summary: Pre-Populate new Application
+  tags:
+  - Application
+  operationId: Pre-Populate new Application
+  produces:
+  - application/json
+  parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '../swagger.yml#/definitions/PrePopulateNewApplicationRequest'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

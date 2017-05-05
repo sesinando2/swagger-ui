@@ -1,0 +1,32 @@
+title: QuestionDefinition
+type: object
+properties:
+  name:
+    description: ''
+    type: string
+  text:
+    description: ''
+    type: string
+  type:
+    description: ''
+    type: string
+  isMultiValued:
+    description: ''
+    type: boolean
+  optionListName:
+    description: ''
+    type: string
+  isLenient:
+    description: ''
+    type: boolean
+  isBounded:
+    description: ''
+    type: boolean
+required:
+- name
+- text
+- type
+- isMultiValued
+- optionListName
+- isLenient
+- isBounded

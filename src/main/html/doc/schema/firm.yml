@@ -1,0 +1,9 @@
+title: Firm
+type: object
+properties:
+  name:
+    type: string
+    description: Placeholder to specify overrides for the firm.
+  frn:
+    type: string
+    description: The firm reference number

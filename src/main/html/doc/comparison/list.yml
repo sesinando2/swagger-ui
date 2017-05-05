@@ -1,0 +1,62 @@
+get:
+  description: >-
+    Operations on existing Comparison associated with Application.
+
+    In order to get quote values for the Comparison PUT method has to be used to request it. Quoting is done in asynchronous way which means that values may not come back straight away. Use GET method to query the comparison for updated quote state.
+
+    Any expired quotes will be requoted when Comparison is requested with PUT method. In order to check whether quotes have expired, first use the GET method to retrieve the Comparison.
+
+    Until all Enquiries are closed Comparison contains only estimated decisions and quotes.
+  summary: Retrieve Comparison
+  tags:
+  - Comparison
+  operationId: Retrieve Comparison
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Comparison'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on existing Comparison associated with Application.
+
+    In order to get quote values for the Comparison PUT method has to be used to request it. Quoting is done in asynchronous way which means that values may not come back straight away. Use GET method to query the comparison for updated quote state.
+
+    Any expired quotes will be requoted when Comparison is requested with PUT method. In order to check whether quotes have expired, first use the GET method to retrieve the Comparison.
+
+    Until all Enquiries are closed Comparison contains only estimated decisions and quotes.
+  summary: Request Comparison
+  tags:
+  - Comparison
+  operationId: Request Comparison
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Comparison'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

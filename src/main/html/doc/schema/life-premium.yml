@@ -1,0 +1,12 @@
+title: LifePremium
+type: object
+properties:
+  refersTo:
+    type: string
+    description: Unique Customer ID.
+  wopContribution:
+    type: number
+    description: Allocated Waiver of Premium premium for the given life.
+required:
+- refersTo
+- wopContribution

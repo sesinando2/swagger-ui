@@ -1,0 +1,27 @@
+get:
+  description: Operations on existing Customers associated with Application identified by unique ID .
+  summary: Retrieve existing Customers for Application
+  tags:
+  - Customer
+  operationId: Retrieve existing Customers for Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        type: array
+        items:
+          $ref: '../swagger.yml#/definitions/Customer'
+    404:
+      description: 'Non-existing Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

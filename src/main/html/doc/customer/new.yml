@@ -1,0 +1,33 @@
+post:
+  description: >-
+    Creating new Customer for Application based on JSON data. Lists all Customers for Application.
+  summary: Create new Customer for Application
+  tags:
+  - Customer
+  operationId: Create new Customer for Application
+  produces:
+  - application/json
+  parameters:
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/CustomerRequest'
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: ''
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Customer'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

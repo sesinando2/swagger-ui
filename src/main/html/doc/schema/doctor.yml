@@ -1,0 +1,12 @@
+title: Doctor
+type: object
+properties:
+  name:
+    type: string
+    description: Doctor's name.
+  surgery:
+    description: Surgery details.
+    $ref: '../swagger.yml#/definitions/Surgery'
+required:
+- name
+- surgery

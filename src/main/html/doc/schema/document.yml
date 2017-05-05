@@ -1,0 +1,8 @@
+title: Document
+type: object
+properties:
+  id:
+    type: string
+    example: 'b9466af5-7a0f-448f-84ec-bfe2156b1423'
+required:
+- id

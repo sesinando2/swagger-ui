@@ -1,0 +1,23 @@
+title: ProviderProductStartDate
+type: object
+properties:
+  refersTo:
+    type: string
+    description: Unique ID of existing Provider Product in the Basket.
+  provider:
+    type: string
+    description: 'Unique Provider ID. Read-only property. This value does not have to be provided when updating Payment. It will be returned after successful request.'
+  productId:
+    type: string
+    description: 'Unique Product ID. Read-only property. This value does not have to be provided when updating Payment. It will be returned after successful request.'
+  date:
+    type: string
+    description: 'Date when Provider Product cover starts. ISO 8601 date format (YYYY-MM-DD). Example: 2015-04-11. Requirement depends on Payment Restriction.'
+  basis:
+    type: string
+    description: Basis on which Provider Product cover starts. Requirement depends on Payment Restriction.
+    enum:
+    - TO_BE_ADVISED
+    - TO_START_IMMEDIATELY
+required:
+- refersTo

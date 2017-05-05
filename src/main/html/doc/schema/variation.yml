@@ -1,0 +1,15 @@
+title: Variations
+type: object
+properties:
+  originalValue:
+    type: string
+    description: Original value before variation.
+  newValue:
+    type: string
+    description: New value after variation.
+  reason:
+    type: string
+    description: Reason attached to the variation.
+required:
+- originalValue
+- newValue

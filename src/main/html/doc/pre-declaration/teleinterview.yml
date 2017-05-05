@@ -1,0 +1,58 @@
+get:
+  description: Operations on existing teleinterview Pre-Declaration associated with Application and Customer Enquiry.
+  summary: Retrieve teleinterview Pre-Declaration
+  tags:
+  - Pre-Declaration
+  operationId: Retrieve teleinterview Pre-Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: enquiryId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Enquiry associated with Application Customer.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Teleinterview'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: Operations on existing teleinterview Pre-Declaration associated with Application and Customer Enquiry.
+  summary: Confirm teleinterview Pre-Declaration
+  tags:
+  - Pre-Declaration
+  operationId: Confirm teleinterview Pre-Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: enquiryId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Enquiry associated with Application Customer.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Teleinterview'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

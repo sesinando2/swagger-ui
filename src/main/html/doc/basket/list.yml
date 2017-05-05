@@ -1,0 +1,23 @@
+get:
+  description: Operations on existing Basket associated with Application.
+  summary: Retrieve Basket
+  tags:
+  - Basket
+  operationId: Retrieve Basket
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/Basket'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

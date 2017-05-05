@@ -1,0 +1,20 @@
+title: BasketQuote
+type: object
+properties:
+  state:
+    description: State of the quote request
+    $ref: '../swagger.yml#/definitions/QuoteState'
+  date:
+    type: string
+    description: 'Date and time quote request was made. ISO 8601 date format (YYYY-MM-DDThh:mm:ss.SSS). Example: 2015-04-11T12:33:12.321.'
+  premium:
+    description: Quote premium. Can be a fixed or ranged value.
+    $ref: '../swagger.yml#/definitions/BasketPremium'
+  sumAssured:
+    type: number
+    description: Quote sum assured.
+  commission:
+    description: Commission value.
+    $ref: '../swagger.yml#/definitions/Commission'
+required:
+- state

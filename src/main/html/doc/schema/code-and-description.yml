@@ -1,0 +1,12 @@
+title: CodeAndDescription
+type: object
+properties:
+  code:
+    type: string
+    description: Option value code. Full list can be retrieved using Question / Option List endpoint with name path param set to proper value.
+  description:
+    type: string
+    description: Human readable description.
+required:
+- code
+- description

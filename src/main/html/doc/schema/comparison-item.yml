@@ -1,0 +1,33 @@
+title: ComparisonItem
+type: object
+properties:
+  id:
+    type: string
+  provider:
+    type: string
+    description: Unique Provider ID.
+  product:
+    $ref: '../swagger.yml#/definitions/ComparisonProduct'
+    description: Application Product properties created at the beginning of the underwriting process.
+  decision:
+    $ref: '../swagger.yml#/definitions/Decision'
+    description: Underwriting Decision.
+  purchasable:
+    type: boolean
+    description: Flag to indicate if the product can be purchased.
+  quotable:
+    type: boolean
+    description: Does provider quote?
+  quote:
+    description: Provider quote.
+    $ref: '../swagger.yml#/definitions/Quote'
+  rating:
+    description: Provider Product specific rating.
+    $ref: '../swagger.yml#/definitions/Rating'
+  details:
+    description: Provider Product specific details like Key Facts, Terms & Conditions documents links and product description.
+    $ref: '../swagger.yml#/definitions/Details'
+required:
+- provider
+- product
+- decision

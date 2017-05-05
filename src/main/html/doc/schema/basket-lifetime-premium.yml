@@ -1,0 +1,8 @@
+title: BasketLifePremium
+type: object
+properties:
+  refersTo:
+    type: string
+    description: Unique Customer ID.
+required:
+- refersTo

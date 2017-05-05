@@ -1,0 +1,71 @@
+get:
+  description: >-
+    Operations on existing Doctor details associated with Application Customer.
+
+    Doctor details are required if any of Provider Products in the Basket have supervised Decision type (`REFER` or `EVIDENCE_REQUIRED`). This information must be provided for Customers to whom the supervised Provider Products belong to.
+  summary: Retrieve Doctor
+  tags:
+  - Doctor
+  operationId: Retrieve Doctor
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/Doctor'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on existing Doctor details associated with Application Customer.
+
+    Doctor details are required if any of Provider Products in the Basket have supervised Decision type (`REFER` or `EVIDENCE_REQUIRED`). This information must be provided for Customers to whom the supervised Provider Products belong to.
+  summary: Confirm Post-Declaration
+  tags:
+  - Doctor
+  operationId: Confirm Post-Declaration1
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/Doctor'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Doctor'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

@@ -1,0 +1,12 @@
+title: Commission
+type: object
+properties:
+  initial:
+    type: number
+    description: Initial commission value.
+  renewal:
+    type: number
+    description: Renewal commission valuel
+  sacrifice:
+    description: Commission sacrifice which drives commission.
+    $ref: '../swagger.yml#/definitions/ComparisonCommissionSacrifice'

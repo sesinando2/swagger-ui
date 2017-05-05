@@ -1,0 +1,35 @@
+get:
+  description: Operations on Question Option List.
+  summary: Retrieve Question Option List
+  tags:
+  - Question
+  operationId: Retrieve Question Option List
+  produces:
+  - application/json
+  parameters:
+  - name: branch
+    in: path
+    required: true
+    type: string
+    description: Name of Enquiry Definition branch.
+  - name: tag
+    in: path
+    required: true
+    type: string
+    description: Name of Enquiry Definition tag.
+  - name: name
+    in: path
+    required: true
+    type: string
+    description: Unique name of Enquiry Option List.
+  responses:
+    200:
+      schema:
+        type: array
+        items:
+          $ref: '../swagger.yml#/definitions/Option'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

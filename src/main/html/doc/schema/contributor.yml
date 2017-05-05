@@ -1,0 +1,16 @@
+title: Contributor
+type: object
+properties:
+  enquiryLine:
+    type: string
+    description: Contributor enquiry line.
+  triggerTag:
+    type: string
+    description: Contributor trigger tag.
+  derived:
+    type: boolean
+    description: Flag to indicate whether the Contributor is derived and is likely to be hidden.
+required:
+- enquiryLine
+- triggerTag
+- derived

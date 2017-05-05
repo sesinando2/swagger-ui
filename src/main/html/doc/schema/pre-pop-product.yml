@@ -1,0 +1,66 @@
+title: PrePopProduct
+type: object
+properties:
+  referenceId:
+    type: string
+    description: Temporary ID of the Product to identify it if any validation errors occur.
+  type:
+    description: Product type.
+    $ref: '#/definitions/ProductType'
+  coverAmount:
+    type: number
+    description: Product cover amount. Required if premium not specified. Does not allow decimals.
+  premium:
+    type: number
+    description: Product premium. Required if coverAmount not specified. Allows decimals.
+  premiumBasis:
+    type: string
+    description: Product premium basis. Required if type is CRITICAL_ILLNESS, CRITICAL_ILLNESS_WITH_LIFE_COVER or INCOME_PROTECTION.
+    enum:
+    - GUARANTEED
+    - REVIEWABLE
+  coverPeriod:
+    type: number
+    description: Product cover period in years. Required if coverUntilAge not specified. Does not allow decimals.
+  coverUntilAge:
+    type: number
+    description: Product cover until age in years. Required if coverPeriod not specified. Does not allow decimals.
+  coverBasis:
+    type: string
+    description: Product cover basis.
+    enum:
+    - DECREASING
+    - LEVEL
+    - INCREASING
+  extendedCoverType:
+    type: string
+    description: Product extended cover type. Only valid if type is INCOME_PROTECTION.
+    enum:
+    - FULL
+    - BUDGET_ONE_YEAR
+    - BUDGET_TWO_YEAR
+    default: FULL
+  deferredPeriodInWeeks:
+    type: number
+    description: Product deferred period in weeks. Required if type is INCOME_PROTECTION.
+    enum:
+    - 0
+    - 1
+    - 4
+    - 8
+    - 13
+    - 26
+    - 52
+  commissionSacrifice:
+    description: Commission sacrifice. Not required but cannot be empty.
+    $ref: '#/definitions/CommissionSacrifice'
+  livesAssured:
+    type: array
+    description: List of Customers (represented as object) for whom the Product is.
+    items:
+      $ref: '#/definitions/LifeAssured'
+required:
+- referenceId
+- type
+- coverBasis
+- livesAssured

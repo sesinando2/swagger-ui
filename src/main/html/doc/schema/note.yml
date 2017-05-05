@@ -1,0 +1,15 @@
+title: Note
+type: object
+properties:
+  important:
+    type: boolean
+    description: Is this an important note.
+  reason:
+    type: string
+    description: Note description.
+  description:
+    type: string
+    description: Note description.
+required:
+- important
+- description

@@ -1,0 +1,7 @@
+title: ProductType
+type: string
+enum:
+- TERM
+- CRITICAL_ILLNESS
+- CRITICAL_ILLNESS_WITH_LIFE_COVER
+- INCOME_PROTECTION

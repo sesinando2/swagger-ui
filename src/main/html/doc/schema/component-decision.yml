@@ -1,0 +1,86 @@
+title: ComponentDecision
+type: object
+properties:
+  type:
+    $ref: '../swagger.yml#/definitions/DecisionType'
+    description: Product Component Decision type. Same as regular Decision type.
+  componentType:
+    type: string
+    description: Product Component type.
+    enum:
+    - LIFE
+    - CI
+    - LIFE_DECREASING
+    - CI_DECREASING
+    - IP_0
+    - IP_1
+    - IP_4
+    - IP_8
+    - IP_13
+    - IP_26
+    - IP_52
+    - AIP_0
+    - AIP_1
+    - AIP_4
+    - AIP_8
+    - AIP_13
+    - AIP_26
+    - AIP_52
+  optional:
+    type: boolean
+    description: Flag to indicate whether this is an optional component.
+  disabilityDefinition:
+    type: string
+    description: Disability definition value
+    enum:
+    - Own Occupation
+    - Suited Occupation
+    - Any Occupation
+    - Work Tasks
+    - Activities Of Daily Living
+    - Functional Abilities Test
+    - Look After Yourself
+    - Comprehensive
+    - Core
+  message:
+    type: string
+    description: Decision specific message value.
+  extraMorbidityContributions:
+    type: array
+    description: List of extra morbidity Contributions.
+    items:
+      $ref: '../swagger.yml#/definitions/DurationOptions'
+  permilleContributions:
+    type: array
+    description: List of permille Contribution.
+    items:
+      $ref: '../swagger.yml#/definitions/DurationOptions'
+  exclusionContributions:
+    type: array
+    description: List of exclusion Contributions.
+    items:
+      $ref: '../swagger.yml#/definitions/ExclusionOptions'
+  indicativeExtraMorbidityContributions:
+    type: array
+    description: List of indicative extra morbidity Contributions.
+    items:
+      $ref: '../swagger.yml#/definitions/RangeOptions'
+  indicativePermilleContributions:
+    type: array
+    description: List of indicative permille Contributions
+    items:
+      $ref: '../swagger.yml#/definitions/RangeOptions'
+  evidenceContributions:
+    type: array
+    description: List of evidence Contributions. Object structure described below as code with description. Option List name for possible values is EvidenceCodesOptions.
+    items:
+      $ref: '../swagger.yml#/definitions/ExclusionOptions'
+  durationContributions:
+    type: array
+    description: List of duration Contributions. Object structure described below as code with description. Option List name for possible values is PostponeCodeOptions.
+    items:
+      $ref: '../swagger.yml#/definitions/ExclusionOptions'
+required:
+- type
+- componentType
+- optional

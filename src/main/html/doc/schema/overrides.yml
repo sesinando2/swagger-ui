@@ -1,0 +1,6 @@
+title: Overrides
+type: object
+properties:
+  user:
+    description: Placeholder to specify overrides for the user creating the application.
+    $ref: '../swagger.yml#/definitions/UserOverrides'

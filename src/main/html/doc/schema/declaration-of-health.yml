@@ -1,0 +1,12 @@
+title: DeclarationOfHealth
+properties:
+  question:
+    type: string
+    example: <p>HTML formatted Declaration-of-Health text.</p>
+  requiredFor:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/Customer'
+required:
+- question
+- requiredFor

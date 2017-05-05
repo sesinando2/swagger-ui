@@ -1,0 +1,17 @@
+title: PaymentRestriction
+type: object
+properties:
+  bankAccount:
+    $ref: '../swagger.yml#/definitions/BankAccountRestriction'
+  paymentDays:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/ProviderPaymentDayRestriction'
+  startDates:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/ProviderProductStartDateRestriction'
+required:
+- bankAccount
+- paymentDays
+- startDates

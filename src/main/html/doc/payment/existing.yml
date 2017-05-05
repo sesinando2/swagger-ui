@@ -1,0 +1,63 @@
+get:
+  description: >-
+    Operations on existing Payment for Application based on Provider Products available in the Basket.
+  summary: Retrieve existing Payment
+  tags:
+  - Payment
+  operationId: Retrieve existing Payment
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/Payment'
+    404:
+      description: Request Payment for not existing Application
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on existing Payment for Application based on Provider Products available in the Basket.
+  summary: Update existing Payment
+  tags:
+  - Payment
+  operationId: Update existing Payment
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/Payment'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Payment'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+      schema: {}
+    404:
+      description: Request Payment for not existing Application
+      schema: {}
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

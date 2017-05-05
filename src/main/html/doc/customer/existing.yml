@@ -1,0 +1,98 @@
+get:
+  description: Operations on existing Customer identified by unique ID associated with Application.
+  summary: Retrieve existing Customer for Application
+  tags:
+  - Customer
+  operationId: Retrieve existing Customer for Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/Customer'
+    404:
+      description: 'Non-existing Customer'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: Operations on existing Customer identified by unique ID associated with Application.
+  summary: Update existing Customer for Application
+  tags:
+  - Customer
+  operationId: Update existing Customer for Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/CustomerRequest'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Customer'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+delete:
+  description: Operations on existing Customer identified by unique ID associated with Application.
+  summary: Remove existing Customer from Application
+  tags:
+  - Customer
+  operationId: Remove existing Customer from Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Customer'
+    404:
+      description: 'Non-existing customer'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

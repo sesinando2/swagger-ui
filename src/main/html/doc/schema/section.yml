@@ -1,0 +1,19 @@
+title: Section
+type: object
+properties:
+  name:
+    type: string
+  isSatisfied:
+    type: boolean
+  hasQuestions:
+    type: boolean
+    example: true
+  enquiryLines:
+    type: array
+    items:
+      $ref: '../swagger.yml#definitions/EnquiryLine'
+required:
+- name
+- isSatisfied
+- hasQuestions
+- enquiryLines

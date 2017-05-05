@@ -1,0 +1,5 @@
+title: Declaration
+type: object
+allOf:
+- $ref: '../swagger.yml#/definitions/DeclarationRequest'
+- $ref: '../swagger.yml#/definitions/DeclarationResponse'

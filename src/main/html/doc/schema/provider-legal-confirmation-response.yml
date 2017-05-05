@@ -1,0 +1,12 @@
+title: ProviderLegalConfirmationResponse
+type: object
+properties:
+  declarationText:
+    type: string
+    description: Provider declaration text.
+  legalDocumentLink:
+    type: string
+    description: Valid URL that contains a document with the legal terms and conditions.
+required:
+- declarationText
+- legalDocumentLink

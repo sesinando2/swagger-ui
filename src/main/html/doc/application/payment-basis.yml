@@ -1,0 +1,31 @@
+put:
+  description: >-
+    Update Payment Basis.
+  summary: Update Payment Basis.
+  tags:
+  - Application
+  operationId: Update Payment Basis.
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: ''
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/PaymentBasisWrapper'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/PaymentBasisWrapper'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

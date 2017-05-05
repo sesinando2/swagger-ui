@@ -1,0 +1,10 @@
+title: BasketTotal
+type: object
+properties:
+  premium:
+    $ref: '../swagger.yml#/definitions/BasketTotalPremium'
+  commission:
+    $ref: '../swagger.yml#/definitions/BasketCommission'
+required:
+- premuim
+- commission

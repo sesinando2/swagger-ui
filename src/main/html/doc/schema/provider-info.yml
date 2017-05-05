@@ -1,0 +1,14 @@
+title: ProviderInfo
+type: object
+properties:
+  provider:
+    type: string
+    description: Unique ID of existing Provider.
+  policyNumber:
+    type: string
+    description: Unique provider specific policy number.
+  amraDocumentLink:
+    type: string
+    description: 'Access to Medical Records Act 1998 (AMRA) document URL.'
+required:
+- provider

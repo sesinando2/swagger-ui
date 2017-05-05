@@ -1,0 +1,12 @@
+title: PostDeclaration
+type: object
+properties:
+  confirmed:
+    type: boolean
+    description: Flag to indicate whether the declaration has been confirmed.
+  text:
+    type: string
+    description: HTML formatted default Post-Declaration text.
+required:
+- confirmed
+- text

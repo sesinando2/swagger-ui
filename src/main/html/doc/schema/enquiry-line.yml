@@ -1,0 +1,29 @@
+title: EnquiryLine
+type: object
+properties:
+  isSatisfied:
+    type: boolean
+  name:
+    type: string
+  section:
+    type: string
+  preamble:
+    type: string
+  alias:
+    type: string
+  triggers:
+    type: array
+    items:
+      type: string
+  questions:
+    type: array
+    items:
+      $ref: '../swagger.yml#definitions/Question'
+required:
+- isSatisfied
+- name
+- section
+- preamble
+- alias
+- triggers
+- questions

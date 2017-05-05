@@ -1,0 +1,62 @@
+get:
+  description: Operations on existing Application identified by unique ID.
+  summary: Retrieve existing Application
+  tags:
+  - Application
+  operationId: Retrieve existing Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/Application'
+    404:
+      description: 'Non-existing Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: Operations on existing Application identified by unique ID.
+  summary: Update existing Application
+  tags:
+  - Application
+  operationId: Update existing Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      title: ExistingApplication
+      type: object
+      properties:
+        paymentBasis:
+          description: ''
+          type: string
+      required:
+      - paymentBasis
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

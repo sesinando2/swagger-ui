@@ -1,0 +1,16 @@
+title: ComparisonCommissionSacrifice
+type: object
+properties:
+  initial:
+    type: number
+    description: Initial commission sacrifice. Does not allow decimals. The lower this value is the higher initial commission will be. Value is a percent represented as integer value between 0 and 100.
+    minimum: 0
+    maximum: 100
+  renewal:
+    type: number
+    description: Renewal commission sacrifice. Allows decimals. The lower this value is the lower renewal commission will be. Value is a percent represented as decimal value between 0 and 2.5.
+    minimum: 0
+    maximum: 2.5
+required:
+- initial
+- renewal

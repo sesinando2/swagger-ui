@@ -1,0 +1,18 @@
+title: BankAccount
+type: object
+properties:
+  sortCode:
+    type: string
+    description: Bank account sort code.
+  number:
+    type: string
+    description: Bank account number.
+  holders:
+    type: array
+    description: Bank account holders. Number of allowed holders depends on Payment Restriction.
+    items:
+      $ref: '../swagger.yml#/definitions/BankAccountHolder'
+required:
+- sortCode
+- number
+- holders

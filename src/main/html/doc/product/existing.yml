@@ -1,0 +1,101 @@
+get:
+  description: Operations on existing Product identified by unique ID associated with Application.
+  summary: Retrieve existing Product for Application
+  tags:
+  - Product
+  operationId: Retrieve existing Product for Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: productId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Product.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Product'
+    404:
+      description: 'Non-existing Product for Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Update operations on existing Product identified by unique ID associated with Application.
+  summary: Update existing Product for Application
+  tags:
+  - Product
+  operationId: Update existing Product for Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: productId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Product.
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/ProductRequest'
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Product'
+    400:
+      description: Unexpected error in API call. See HTTP response body for details.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+delete:
+  description: Operations on existing Product identified by unique ID associated with Application.
+  summary: Remove existing Product from Application
+  tags:
+  - Product
+  operationId: Remove existing Product from Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: productId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Product.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/Product'
+    404:
+      description: 'Non-existing Product from Application'
+      schema: {}
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

@@ -1,0 +1,7 @@
+title: Plan
+type: object
+properties:
+  'plan-id':
+    type: string
+required:
+- 'plan-id'

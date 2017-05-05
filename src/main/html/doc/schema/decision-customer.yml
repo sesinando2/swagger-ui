@@ -1,0 +1,25 @@
+title: DecisionCustomer
+type: object
+description: Subset of Application Customer properties created at the beginning of the underwriting process.
+properties:
+  id:
+    type: string
+    description: Unique Customer ID.
+  name:
+    type: string
+    description: Customer name.
+  surname:
+    type: string
+    description: Customer surname.
+  gender:
+    description: Customer gender.
+    $ref: '#/definitions/Gender'
+  atRiskOfSmoking:
+    type: boolean
+    description: Flag indicating if the customer is a non-smoker with a smoking risk.
+required:
+- id
+- name
+- surname
+- gender
+- atRiskOfSmoking

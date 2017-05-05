@@ -1,0 +1,29 @@
+title: Premium
+type: object
+properties:
+  from:
+    type: number
+    description: Lower bound of the premium value.
+  to:
+    type: number
+    description: Upper bound of the premium value.
+  lifetime:
+    type: number
+    description: Total premium to be paid over time.
+  discount:
+    type: number
+    description: Total amount discounted from the premium value.
+  unloaded:
+    description: Quote premium unloaded price. Can be a fixed or ranged value.
+    $ref: '#/definitions/UnloadedPremium'
+  lives:
+    type: array
+    description: List of Life specific premiums.
+    items:
+      $ref: '#/definitions/LifePremium'
+required:
+- from
+- to
+- lifetime
+- discount
+- lives

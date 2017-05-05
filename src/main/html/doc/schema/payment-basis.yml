@@ -1,0 +1,5 @@
+title: PaymentBasis
+type: string
+enum:
+- ANNUAL
+- MONTHLY

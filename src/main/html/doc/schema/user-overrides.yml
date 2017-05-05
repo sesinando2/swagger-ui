@@ -1,0 +1,14 @@
+title: UserOverrides
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the agent (first name and last name).
+  firm:
+    description: Placeholder to specify overrides for the firm.
+    $ref: '../swagger.yml#/definitions/Firm'
+  providerAgentDetails:
+    description: List of agent number overrides. It allows a user to specify an agent number per provider and commission style (represented as object).
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/ProviderAgentDetails'

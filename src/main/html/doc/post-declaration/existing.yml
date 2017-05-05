@@ -1,0 +1,58 @@
+get:
+  description: >-
+    Operations on existing Post-Declaration associated with Application.
+
+    Post-Declaration can be retrieved and confirmed if all Customer Enquiries are satisfied.
+
+    Confirming Post-Declaration means closing all Customer Enquiries. Any changes to Enquiry will require confirming Post-Declaration again.
+  summary: Retrieve Post-Declaration
+  tags:
+  - Post-Declaration
+  operationId: Retrieve Post-Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/PostDeclaration'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on existing Post-Declaration associated with Application.
+
+    Post-Declaration can be retrieved and confirmed if all Customer Enquiries are satisfied.
+
+    Confirming Post-Declaration means closing all Customer Enquiries. Any changes to Enquiry will require confirming Post-Declaration again.
+  summary: Confirm Post-Declaration
+  tags:
+  - Post-Declaration
+  operationId: Confirm Post-Declaration
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/PostDeclaration'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

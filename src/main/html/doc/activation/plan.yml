@@ -1,0 +1,33 @@
+put:
+  description: >-
+    Assigning a Plan to an activated Application based on JSON data
+  summary: Assign a Plan to an Application
+  tags:
+  - Activation
+  operationId: Assign a Plan to an Application
+  produces:
+  - application/json
+  parameters:
+  - name: body
+    in: body
+    required: true
+    description: ''
+    schema:
+      $ref: '../swagger.yml#/definitions/Plan'
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: ''
+  responses:
+    204:
+      description: 'Request a Plan assignment to an Application.'
+    401:
+      description: Request a Plan assignment to an Application when the authenticated user has no permission to assign.
+    500:
+      description: Request a Plan assignment to an Application when the application is not activated.
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

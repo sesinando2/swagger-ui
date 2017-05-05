@@ -1,0 +1,30 @@
+delete:
+  description: Operations on Basket Item associated with Application.
+  summary: Remove Item from Basket
+  tags:
+  - Basket
+  operationId: Remove Item from Basket
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: itemId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Provider Product.
+  responses:
+    200:
+      schema:
+        type: object
+    404:
+      description: 'Removing Item from Non-existing Basket'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

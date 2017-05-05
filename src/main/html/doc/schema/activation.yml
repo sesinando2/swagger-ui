@@ -1,0 +1,10 @@
+title: Activation
+type: object
+properties:
+  items:
+    type: array
+    description: List of Activation Items.
+    items:
+      $ref: '../swagger.yml#/definitions/ActivationItem'
+required:
+- items

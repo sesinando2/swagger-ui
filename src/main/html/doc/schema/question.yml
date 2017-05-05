@@ -1,0 +1,18 @@
+title: Question
+type: object
+properties:
+  name:
+    type: string
+  path:
+    type: string
+  answers:
+    type: array
+    items:
+      type: string
+  validationErrors:
+    type: objects
+required:
+- name
+- path
+- answers
+- validationErrors

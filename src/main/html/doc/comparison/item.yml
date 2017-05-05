@@ -1,0 +1,30 @@
+get:
+  description: >-
+    Operations on single Comparison Item associated with Application.
+  summary: Retrieve Comparison Item
+  tags:
+  - Comparison
+  operationId: Retrieve Comparison Item
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: itemId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Comparison Item.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/ComparisonItem'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

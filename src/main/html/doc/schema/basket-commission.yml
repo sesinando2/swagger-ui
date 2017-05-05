@@ -1,0 +1,9 @@
+title: BasketCommission
+type: object
+properties:
+  initial:
+    type: number
+    description: Initial commission value.
+  renewal:
+    type: number
+    description: Renewal commission valuel

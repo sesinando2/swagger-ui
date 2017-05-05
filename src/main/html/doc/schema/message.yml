@@ -1,0 +1,10 @@
+title: Message
+type: object
+properties:
+  code:
+    type: string
+  text:
+    type: string
+required:
+- code
+- text

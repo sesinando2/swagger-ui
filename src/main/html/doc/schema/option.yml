@@ -1,0 +1,14 @@
+title: Option
+type: object
+properties:
+  name:
+    type: string
+  text:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+required:
+- name
+- text

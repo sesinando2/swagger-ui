@@ -1,0 +1,78 @@
+title: PrePopCustomer
+type: object
+properties:
+  referenceId:
+    type: string
+    description: Temporary ID of the Customer to be used when referencing to livesAsssured for the Product and to identify them if any validation errors occur.
+    example: 'cus-001'
+  name:
+    type: string
+    description: Customer name.
+    example: 'John'
+  surname:
+    type: string
+    description: Customer surname.
+    example: 'Doe'
+  title:
+    type: string
+    description: Customer title.
+    example: 'MR'
+    enum:
+    - MR
+    - MRS
+    - MISS
+    - MS
+    - DR
+    - REV
+  otherTitle:
+    type: string
+    description: Customer custom title (if title offers nothing suitable).
+  gender:
+    description: Customer gender.
+    example: MALE
+    $ref: '../swagger.yml#/definitions/Gender'
+  dateOfBirth:
+    type: string
+    description: 'Customer date of birth. ISO 8601 date format (YYYY-MM-DD) required. Example: 1980-01-01.'
+    example: '1980-01-01'
+  smoker:
+    type: boolean
+    description: true if Customer smokes, false otherwise.
+    example: false
+  email:
+    type: string
+    description: Customer email address.
+    example: 'john.doe@domain.com'
+  occupation:
+    type: string
+    description: Customer occupation.
+    example: 'underwriter'
+  earnings:
+    type: string
+    description: Customer earnings.
+  maritalStatus:
+    type: string
+    description: Customer marital status.
+    example: SINGLE
+    enum:
+    - MARRIED
+    - SINGLE
+    - SEPARATED
+    - DIVORCED
+    - WIDOWED
+    - CIVIL_PARTNER
+  contactDetails:
+    description: Customer contact details. Not required but cannot be empty.
+    $ref: '../swagger.yml#/definitions/ContactDetails'
+  drDetails:
+    description: drDetails
+    $ref: '../swagger.yml#/definitions/Doctor'
+required:
+- referenceId
+- name
+- surname
+- title
+- gender
+- dateOfBirth
+- smoker
+- email

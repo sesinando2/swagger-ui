@@ -1,0 +1,20 @@
+title: ActivationStatus
+type: object
+properties:
+  state:
+    type: string
+    description: Activation state.
+    enum:
+    - PENDING
+    - SUCCEEDED
+    - FAILED
+  successMessage:
+    type: string
+    description: 'Provider specific success message. Available if state is SUCCEEDED.'
+  errors:
+    type: array
+    description: 'Provider specific error messages. Available if state is FAILED.'
+    items:
+      $ref: '../swagger.yml#/definitions/ActivationError'
+required:
+- state

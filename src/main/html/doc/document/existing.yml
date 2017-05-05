@@ -1,0 +1,31 @@
+get:
+  description: Operations on existing Application Document identified by unique Application and Document ID.
+  summary: Retrieve Document content
+  tags:
+  - Document
+  operationId: Retrieve Document content
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: documentId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Document.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/DocumentContent'
+    404:
+      description: 'Request Retrieve Document status for a non existing document ID.'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

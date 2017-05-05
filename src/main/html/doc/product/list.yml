@@ -1,0 +1,33 @@
+get:
+  description: Operations on existing Products and Customer associated with Application identified by unique ID.
+  summary: Retrieve existing Products associated with Customer for the Application
+  tags:
+  - Product
+  operationId: Retrieve existing Products associated with Customer for the Application
+  produces:
+  - application/json
+  parameters:
+  - name: id
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: lifeAssured
+    in: query
+    required: true
+    type: string
+    description: Optional unique ID of existing Life Assured for Customer.
+  responses:
+    200:
+      description: 'Non-existing Product for Application'
+      schema:
+        type: array
+        items:
+          $ref: '../swagger.yml#/definitions/Product'
+    404:
+      description: 'Non-existing Product for Application'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

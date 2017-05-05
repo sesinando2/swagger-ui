@@ -1,0 +1,18 @@
+title: BasketPremium
+type: object
+properties:
+  from:
+    type: number
+    description: Lower bound of the premium value.
+  to:
+    type: number
+    description: Upper bound of the premium value.
+  lives:
+    type: array
+    description: List of Life specific premiums.
+    items:
+      $ref: '../swagger.yml#/definitions/BasketLifePremium'
+required:
+- from
+- to
+- lives

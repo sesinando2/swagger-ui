@@ -1,0 +1,8 @@
+title: BankAccountHolder
+type: object
+properties:
+  refersTo:
+    type: string
+    description: Reference to ID of the Customer who is a holder of the account.
+required:
+- refersTo

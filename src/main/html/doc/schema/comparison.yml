@@ -1,0 +1,16 @@
+title: Comparison
+type: object
+properties:
+  estimated:
+    type: boolean
+  items:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/ComparisonItem'
+  quickQuotes:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/ComparisonItem'
+required:
+- items
+- quickQuotes

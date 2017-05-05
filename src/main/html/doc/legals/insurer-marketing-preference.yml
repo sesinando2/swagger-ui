@@ -1,0 +1,68 @@
+get:
+  description: >-
+    Operations on Insurer Marketing Preference associated with Application Customer.
+
+    Activation will not be possible without giving an answer this Marketing Preference.
+  summary: Retrieve Insurer Marketing Preference
+  tags:
+  - Legals
+  operationId: Retrieve Insurer Marketing Preference
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/MarketingPreference'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on Insurer Marketing Preference associated with Application Customer.
+
+    Activation will not be possible without giving an answer this Marketing Preference.
+  summary: Update Insurer Marketing Preference
+  tags:
+  - Legals
+  operationId: Update Insurer Marketing Preference
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '../swagger.yml#/definitions/MarketingPreferenceRequest'
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/MarketingPreference'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

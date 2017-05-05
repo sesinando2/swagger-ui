@@ -1,0 +1,12 @@
+title: PreDeclaration
+type: object
+properties:
+  confirmed:
+    type: boolean
+    description: Flag to indicate whether the declaration has been confirmed.
+  text:
+    type: string
+    description: HTML formatted default Pre-Declaration text.
+required:
+- confirmed
+- text

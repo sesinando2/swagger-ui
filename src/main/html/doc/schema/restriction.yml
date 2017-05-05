@@ -1,0 +1,7 @@
+title: Restriction
+type: object
+properties:
+  required:
+    type: boolean
+  max:
+    type: number

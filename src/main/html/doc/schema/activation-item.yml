@@ -1,0 +1,16 @@
+title: ActivationItem
+type: object
+properties:
+  providerInfo:
+    description: Information specific to the Provider.
+    $ref: '../swagger.yml#/definitions/ProviderInfo'
+  product:
+    description: Application Product properties created at the beginning of the underwriting process.
+    $ref: '../swagger.yml#/definitions/ComparisonProduct'
+  status:
+    description: Information about the activation process
+    $ref: '../swagger.yml#/definitions/ActivationStatus'
+required:
+- providerInfo
+- product
+- status

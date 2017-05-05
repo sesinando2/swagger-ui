@@ -1,0 +1,28 @@
+title: Enquiry
+type: object
+properties:
+  enquiryId:
+    type: string
+  branch:
+    type: string
+  tag:
+    type: string
+  isVoid:
+    type: boolean
+  isOpen:
+    type: boolean
+    example: true
+  isSatisfied:
+    type: boolean
+  sections:
+    type: array
+    items:
+      $ref: '../swagger.yml#/definitions/Section'
+required:
+- enquiryid
+- branch
+- tag
+- isVoid
+- isOpen
+- isSatisfied
+- sections

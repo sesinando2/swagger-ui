@@ -1,0 +1,20 @@
+title: Address
+type: object
+properties:
+  line1:
+    type: string
+    description: Address first line.
+  line2:
+    type: string
+    description: Address second line.
+  town:
+    type: string
+    description: Address town.
+  country:
+    type: string
+    description: Address county.
+  postcode:
+    type: string
+    description: Address postcode.
+required:
+- postcode

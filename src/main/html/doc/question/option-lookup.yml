@@ -1,0 +1,40 @@
+get:
+  description: Operations on Question Option Lookup.
+  summary: Retrieve Question Options using partial lookup
+  tags:
+  - Question
+  operationId: Retrieve Question Options using partial lookup
+  produces:
+  - application/json
+  parameters:
+  - name: branch
+    in: path
+    required: true
+    type: string
+    description: Name of Enquiry Definition branch.
+  - name: tag
+    in: path
+    required: true
+    type: string
+    description: Name of Enquiry Definition tag.
+  - name: name
+    in: path
+    required: true
+    type: string
+    description: Unique name of Enquiry Question name.
+  - name: stem
+    in: path
+    required: true
+    type: string
+    description: Partial value to match existing values to.
+  responses:
+    200:
+      schema:
+        type: array
+        items:
+          type: string
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

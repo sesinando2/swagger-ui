@@ -1,0 +1,78 @@
+get:
+  description: >-
+    Operations on Provider Legal Confirmation associated with Application, Customer and Provider.
+
+    Activation will not be possible without confirming legal terms and conditions, for providers in where this information is mandatory.
+  summary: Retrieve Provider Legal Confirmation
+  tags:
+  - Legals
+  operationId: Retrieve Provider Legal Confirmation
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  - name: providerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Provider.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/ProviderLegalConfirmationResponse'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
+put:
+  description: >-
+    Operations on Provider Legal Confirmation associated with Application, Customer and Provider.
+
+    Activation will not be possible without confirming legal terms and conditions, for providers in where this information is mandatory.
+  summary: Update Provider Legal Confirmation
+  tags:
+  - Legals
+  operationId: Update Provider Legal Confirmation
+  produces:
+  - application/json
+  parameters:
+  - name: applicationId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Application.
+  - name: customerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Customer.
+  - name: providerId
+    in: path
+    required: true
+    type: string
+    description: Unique ID of existing Provider.
+  - name: body
+    in: body
+    required: true
+    schema:
+      $ref: '../swagger.yml#/definitions/ProviderLegalConfirmationRequest'
+  responses:
+    200:
+      schema:
+        $ref: '../swagger.yml#/definitions/ProviderLegalConfirmation'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

@@ -1,0 +1,7 @@
+title: PaymentBasisWrapper
+type: object
+properties:
+  paymentBasis:
+    $ref: '../swagger.yml#/definitions/PaymentBasis'
+required:
+- paymentBasis

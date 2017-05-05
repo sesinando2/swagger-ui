@@ -1,0 +1,11 @@
+title: ProviderPaymentDay
+type: object
+properties:
+  provider:
+    type: string
+    description: Unique Provider ID.
+  dayOfMonth:
+    type: number
+    description: 'Day of month when payment should be taken from the bank account. Allowed values: 1 to 28. Requirement depends on Payment Restriction.'
+required:
+- provider

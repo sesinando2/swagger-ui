@@ -1,0 +1,14 @@
+title: ContactDetails
+type: object
+properties:
+  telephoneNumber:
+    type: string
+    description: Customer main telephone number.
+  alternativeTelephoneNumber:
+    type: string
+    description: Customer alternative telephone number.
+  address:
+    description: Customer address details. Not required but cannot be empty.
+    $ref: '../swagger.yml#/definitions/Address'
+required:
+- telephoneNumber

@@ -1,0 +1,11 @@
+title: 'Duration'
+type: object
+properties:
+  sum:
+    type: number
+    description: Numeric value of Contribution.
+  duration:
+    type: string
+    description: 'Duration of value. ISO 8601 duration format (PnYnMnDTnHnMnS). Example: P3Y.'
+required:
+- sum

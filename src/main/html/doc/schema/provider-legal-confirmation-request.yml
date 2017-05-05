@@ -1,0 +1,7 @@
+title: ProviderLegalConfirmationRequest
+type: object
+properties:
+  answer:
+    type: boolean
+    description: 'Answer to declaration. If not available it means answer was not given (nor true or false).'
+    example: true

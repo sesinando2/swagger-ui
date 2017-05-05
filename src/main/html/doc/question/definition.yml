@@ -1,0 +1,34 @@
+get:
+  description: Operations on Question Definition.
+  summary: Retrieve Question Definition
+  tags:
+  - Question
+  operationId: Retrieve Question Definition
+  produces:
+  - application/json
+  parameters:
+  - name: branch
+    in: path
+    required: true
+    type: string
+    description: Name of Enquiry Definition branch.
+  - name: tag
+    in: path
+    required: true
+    type: string
+    description: Name of Enquiry Definition tag.
+  - name: name
+    in: path
+    required: true
+    type: string
+    description: Unique name of Enquiry Question.
+  responses:
+    200:
+      description: ''
+      schema:
+        $ref: '../swagger.yml#/definitions/QuestionDefinition'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false

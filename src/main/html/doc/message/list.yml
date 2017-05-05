@@ -1,0 +1,21 @@
+get:
+  description: ''
+  summary: Retrieve Messages
+  tags:
+  - Message
+  operationId: Retrieve Messages
+  produces:
+  - application/json
+  parameters: []
+  responses:
+    200:
+      description: ''
+      schema:
+        type: array
+        items:
+          $ref: '../swagger.yml#/definitions/Message'
+  x-operation-settings:
+    CollectParameters: false
+    AllowDynamicQueryParameters: false
+    AllowDynamicFormParameters: false
+    IsMultiContentStreaming: false
