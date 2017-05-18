@@ -1,0 +1,364 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "UnderwriteMe Product Service API",
+    "title": "UME Product Service API",
+    "termsOfService": "http://underwriteme.co.uk",
+    "contact": {
+      "name": "UnderwriteMe"
+    },
+    "version": "0.1"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "paths": {
+    "/product/types/definitions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "product-type-resource"
+        ],
+        "summary": "Returns all available product type definitions for the provided list of providers",
+        "operationId": "getAvailableProductTypesUsingGET",
+        "parameters": [
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi",
+            "description": "providerIds",
+            "name": "providerIds",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductTypeDefinition"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/product/variants": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "product-variant-resource"
+        ],
+        "summary": "getAvailableProductVariants",
+        "operationId": "getAvailableProductVariantsUsingPOST",
+        "parameters": [
+          {
+            "description": "application",
+            "name": "application",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductVariant"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Answer": {
+      "type": "object",
+      "properties": {
+        "questionId": {
+          "type": "string"
+        },
+        "questionType": {
+          "type": "string",
+          "enum": [
+            "BOOLEAN",
+            "STRING",
+            "NUMBER",
+            "OPTION",
+            "OPTION_LIST"
+          ]
+        },
+        "value": {
+          "type": "object"
+        }
+      }
+    },
+    "Application": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Product"
+          }
+        }
+      }
+    },
+    "AssociatedCustomer": {
+      "type": "object",
+      "properties": {
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Component"
+          }
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "Component": {
+      "type": "object",
+      "properties": {
+        "componentType": {
+          "type": "string",
+          "enum": [
+            "OPTION",
+            "CLASS_OF_BUSINESS"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "Customer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "answers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Answer"
+          }
+        },
+        "customers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Customer"
+          }
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductTypeDefinition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "productType": {
+          "type": "string"
+        },
+        "providerId": {
+          "type": "string"
+        },
+        "questionDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QuestionDefinition"
+          }
+        }
+      }
+    },
+    "ProductVariant": {
+      "type": "object",
+      "properties": {
+        "associatedCustomers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssociatedCustomer"
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "productType": {
+          "type": "string"
+        },
+        "providerId": {
+          "type": "string"
+        }
+      }
+    },
+    "QuestionDefinition": {
+      "type": "object",
+      "properties": {
+        "helpText": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "questionType": {
+          "$ref": "#/definitions/QuestionType"
+        }
+      }
+    },
+    "BooleanType": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/QuestionType"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "SelectableOption": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "helpText": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "OptionType": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/QuestionType"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "OptionListType": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/QuestionType"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "selectableOptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SelectableOption"
+          }
+        }
+      }
+    },
+    "QuestionType": {
+      "type": "object",
+      "required": [
+        "questionType"
+      ],
+      "discriminator": "questionType",
+      "properties": {
+        "questionType": {
+          "type": "string",
+          "example": "BooleanType",
+          "enum": [
+            "BooleanType",
+            "StringType",
+            "OptionType",
+            "OptionListType"
+          ]
+        }
+      },
+      "required": [
+        "questionType"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "description": "Product Type Resource",
+      "name": "product-type-resource"
+    },
+    {
+      "description": "Product Variant Resource",
+      "name": "product-variant-resource"
+    }
+  ]
+}

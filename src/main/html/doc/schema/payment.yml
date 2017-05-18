@@ -3,16 +3,16 @@ type: object
 properties:
   bankAccount:
     description: Bank account details.
-    $ref: '#/definitions/BankAccount'
+    $ref: '../swagger.yml#/definitions/BankAccount'
   paymentDays:
     type: array
     description: 'List of payment days by Provider. List cannot be empty if at least one Provider requires payment day. If no Provider requires payment day then there is no need to supply value for this property.'
     items:
-      $ref: '#/definitions/ProviderPaymentDay'
+      $ref: '../swagger.yml#/definitions/ProviderPaymentDay'
   startDates:
     type: array
     description: 'List of start dates by Provider Product.'
     items:
-      $ref: '#/definitions/ProviderProductStartDate'
+      $ref: '../swagger.yml#/definitions/ProviderProductStartDate'
 required:
 - bankAccount

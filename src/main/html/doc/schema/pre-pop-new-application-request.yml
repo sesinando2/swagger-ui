@@ -14,11 +14,19 @@ properties:
   paymentDetails:
     description: Payment details.
     $ref: '../swagger.yml#/definitions/Payment'
+    example:
+      bankAccount:
+        sortCode: '112233'
+        number: '11223344'
+        holders:
+        - refersTo: 'cus-001'
   owner:
     type: string
+    example: owner
     description: Owner of the application.
   frn:
     type: string
+    example: frn
     description: Firm reference number of the firm that owns the application. Must be provided if no specific individual owner is provided. If both owner and frn are present then ower takes precedence and frn is ignored.
   adviserReferenceNumber:
     type: string

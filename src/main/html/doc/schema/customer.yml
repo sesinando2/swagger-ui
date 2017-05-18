@@ -6,6 +6,9 @@ properties:
   referenceId:
     type: string
     description: Temporary ID of the Customer to be used when referencing to livesAsssured for the Product and to identify them if any validation errors occur.
+  enquiryId:
+    type: string
+    example: '029ab8d8-0a62-423e-8e84-6e8d505bb742'
   name:
     type: string
     description: Customer name.

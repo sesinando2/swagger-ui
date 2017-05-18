@@ -66,6 +66,18 @@ properties:
     $ref: '../swagger.yml#/definitions/ContactDetails'
   drDetails:
     description: drDetails
+    example:
+      name: Adam Smith
+      surgery:
+        name: Adam Smith Surgery
+        contactDetails:
+          telephoneNumber: '01234 567890'
+          address:
+            line1: 21 King's Road
+            line2: Queen Avenue
+            town: London
+            county: London
+            postcode: BA1 2BA
     $ref: '../swagger.yml#/definitions/Doctor'
 required:
 - referenceId

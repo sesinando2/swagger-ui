@@ -13,7 +13,7 @@ properties:
     description: Customer surname.
   gender:
     description: Customer gender.
-    $ref: '#/definitions/Gender'
+    $ref: '../swagger.yml#/definitions/Gender'
   atRiskOfSmoking:
     type: boolean
     description: Flag indicating if the customer is a non-smoker with a smoking risk.

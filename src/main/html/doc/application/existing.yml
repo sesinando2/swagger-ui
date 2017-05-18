@@ -42,14 +42,7 @@ put:
     required: true
     description: ''
     schema:
-      title: ExistingApplication
-      type: object
-      properties:
-        paymentBasis:
-          description: ''
-          type: string
-      required:
-      - paymentBasis
+      $ref: '../swagger.yml#/definitions/ExistingApplication'
   responses:
     200:
       description: ''

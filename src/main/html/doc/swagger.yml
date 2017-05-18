@@ -1,6 +1,6 @@
-swagger: 2.0
+swagger: '2.0'
 info:
-  version: 1.0
+  version: '1.0'
   title: UnderwriteMe API
   description: >-
     __UnderwriteMe API__ is a set of REST endpoints which allows you to interact with underwriting workflow. Workflow consist of following components:
@@ -137,306 +137,207 @@ paths:
   /message:
     $ref: ./message/list.yml
 definitions:
-
   Address:
     $ref: ./schema/address.yml
-
   ContactDetails:
     $ref: ./schema/contact-details.yml
-
   Surgery:
     $ref: ./schema/surgery.yml
-
   Doctor:
     $ref: ./schema/doctor.yml
-
   Gender:
     $ref: ./schema/gender.yml
-
   CustomerRequest:
     $ref: ./schema/customer-request.yml
-
   Customer:
     $ref: ./schema/customer.yml
-
   LifeAssuredRequest:
     $ref: ./schema/life-assured-request.yml
-
   LifeAssured:
     $ref: ./schema/life-assured.yml
-
   CommissionSacrifice:
     $ref: ./schema/commission-sacrifice.yml
-
   ProductType:
     $ref: ./schema/product-type.yml
-
   ProductRequest:
     $ref: ./schema/product-request.yml
-
   Product:
     $ref: ./schema/product.yml
-
   ProviderAgentDetails:
     $ref: ./schema/provider-agent-details.yml
-
   Firm:
     $ref: ./schema/firm.yml
-
   UserOverrides:
     $ref: ./schema/user-overrides.yml
-
   Overrides:
     $ref: ./schema/overrides.yml
-
   NewApplicationRequest:
     $ref: ./schema/new-application-request.yml
-
   PaymentBasis:
     $ref: ./schema/payment-basis.yml
-
   Application:
     $ref: ./schema/application.yml
-
+  ExistingApplication:
+    $ref: ./schema/existing-application.yml
   PaymentBasisWrapper:
     $ref: ./schema/payment-basis-wrapper.yml
-
   PrePopCustomer:
     $ref: ./schema/pre-pop-customer.yml
-
   PrePopProduct:
     $ref: ./schema/pre-pop-product.yml
-
   PrePopulateNewApplicationRequest:
     $ref: ./schema/pre-pop-new-application-request.yml
-
   BankAccountHolder:
     $ref: ./schema/bank-account-holder.yml
-
   BankAccount:
     $ref: ./schema/bank-account.yml
-
   ProviderPaymentDay:
     $ref: ./schema/provider-payment-day.yml
-
   ProviderProductStartDate:
     $ref: ./schema/provider-product-start-date.yml
-
   Payment:
     $ref: ./schema/payment.yml
-
   PreDeclaration:
     $ref: ./schema/pre-declaration.yml
-
   Teleinterview:
     $ref: ./schema/teleinterview.yml
-
   Question:
     $ref: ./schema/question.yml
-
   EnquiryLine:
     $ref: ./schema/enquiry-line.yml
-
   Section:
     $ref: ./schema/section.yml
-
   Enquiry:
     $ref: ./schema/enquiry.yml
-
   QuestionDefinition:
     $ref: ./schema/question-definition.yml
-
   Option:
     $ref: ./schema/option.yml
-
   PostDeclaration:
     $ref: ./schema/post-declaration.yml
-
   DecisionType:
     $ref: ./schema/decision-type.yml
-
   Contributor:
     $ref: ./schema/contributor.yml
-
   Duration:
     $ref: ./schema/duration.yml
-
   DurationOptions:
     $ref: ./schema/duration-options.yml
-
   CodeAndDescription:
     $ref: ./schema/code-and-description.yml
-
   ExclusionOptions:
     $ref: ./schema/exclusion-options.yml
-
   RangeSchema:
     $ref: ./schema/range-schema.yml
-
   RangeOptions:
     $ref: ./schema/range-options.yml
-
   ComponentDecision:
     $ref: ./schema/component-decision.yml
-
   DecisionCustomer:
     $ref: ./schema/decision-customer.yml
-
   CustomerDecision:
     $ref: ./schema/customer-decision.yml
-
   Decision:
     $ref: ./schema/decision.yml
-
   QuoteState:
     $ref: ./schema/quote-state.yml
-
   Note:
     $ref: ./schema/note.yml
-
   Variation:
     $ref: ./schema/variation.yml
-
   UnloadedPremium:
     $ref: ./schema/unloaded-premium.yml
-
   LifePremium:
     $ref: ./schema/life-premium.yml
-
   Premium:
     $ref: ./schema/premium.yml
-
   ComparisonCommissionSacrifice:
     $ref: ./schema/comparison-commission-sacrifice.yml
-
   Commission:
     $ref: ./schema/commission.yml
-
   Quote:
     $ref: ./schema/quote.yml
-
   Rating:
     $ref: ./schema/rating.yml
-
   Details:
     $ref: ./schema/details.yml
-
   ComparisonLifeAssuredRequest:
     $ref: ./schema/comparison-life-assured-request.yml
-
   ComparisonLifeAssured:
     $ref: ./schema/comparison-life-assured.yml
-
   ComparisonProduct:
     $ref: ./schema/comparison-product.yml
-
   ComparisonItem:
     $ref: ./schema/comparison-item.yml
-
   Comparison:
     $ref: ./schema/comparison.yml
-
   BasketProduct:
     $ref: ./schema/basket-product.yml
-
   BasketLifePremium:
     $ref: ./schema/basket-lifetime-premium.yml
-
   BasketPremium:
     $ref: ./schema/basket-premium.yml
-
   BasketQuote:
     $ref: ./schema/basket-quote.yml
-
   BasketDecision:
     $ref: ./schema/basket-decision.yml
-
   BasketItem:
     $ref: ./schema/basket-item.yml
-
   BasketTotalPremium:
     $ref: ./schema/basket-total-premium.yml
-
   BasketCommission:
     $ref: ./schema/basket-commission.yml
-
   BasketTotal:
     $ref: ./schema/basket-total.yml
-
   Basket:
     $ref: ./schema/basket.yml
-
   Document:
     $ref: ./schema/document.yml
-
   DeclarationOfHealth:
     $ref: ./schema/declaration-of-health.yml
-
   Restriction:
     $ref: ./schema/restriction.yml
-
   BankAccountRestriction:
     $ref: ./schema/bank-account-restriction.yml
-
   ProviderProductStartDateRestriction:
     $ref: ./schema/provider-product-start-date-restriction.yml
-
   ProviderPaymentDayRestriction:
     $ref: ./schema/provider-payment-day-restriction.yml
-
   PaymentRestriction:
     $ref: ./schema/payment-restriction.yml
-
   DeclarationRequest:
     $ref: ./schema/declaration-request.yml
-
   DeclarationResponse:
     $ref: ./schema/declaration-response.yml
-
   Declaration:
     $ref: ./schema/declaration.yml
-
   NonAnswerableDeclaration:
     $ref: ./schema/non-answerable-declaration.yml
-
   MarketingPreferenceRequest:
     $ref: ./schema/marketing-preference-request.yml
-
   MarketingPreferenceResponse:
     $ref: ./schema/marketing-preference-response.yml
-
   MarketingPreference:
     $ref: ./schema/marketing-preference.yml
-
   ProviderLegalConfirmationRequest:
     $ref: ./schema/provider-legal-confirmation-request.yml
-
   ProviderLegalConfirmationResponse:
     $ref: ./schema/provider-legal-confirmation-response.yml
-
   ProviderLegalConfirmation:
     $ref: ./schema/provider-legal-confirmation.yml
-
   ActivationError:
     $ref: ./schema/activation-error.yml
-
   ActivationStatus:
     $ref: ./schema/activation-status.yml
-
   ProviderInfo:
     $ref: ./schema/provider-info.yml
-
   ActivationItem:
     $ref: ./schema/activation-item.yml
-
   Activation:
     $ref: ./schema/activation.yml
-
   Plan:
     $ref: ./schema/plan.yml
-
   DocumentContent:
     $ref: ./schema/document-content.yml
-
   Message:
     $ref: ./schema/message.yml

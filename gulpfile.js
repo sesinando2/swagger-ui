@@ -15,6 +15,7 @@ var connect = require('gulp-connect');
 var header = require('gulp-header');
 var pkg = require('./package.json');
 var order = require('gulp-order');
+var cors = require('cors');
 var banner = ['/**',
   ' * <%= pkg.name %> - <%= pkg.description %>',
   ' * @version v<%= pkg.version %>',
@@ -124,7 +125,10 @@ gulp.task('watch', function() {
 gulp.task('connect', function() {
   connect.server({
     root: 'dist',
-    livereload: true
+    livereload: true,
+    middleware: function() {
+      return [cors()];
+    }
   });
 });
 

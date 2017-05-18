@@ -62,14 +62,19 @@ put:
       properties:
         HEIGHT:
           type: string
+          example: '1.82'
         WEIGHT_MALE:
           type: string
+          example: '95'
         NON_SMOKER_STATUS:
           type: string
+          example: 'Life-long non smoker'
         OCCUPATION:
           type: string
+          example: Secretary
         FAMILY_HISTORY_LIFE:
           type: string
+          example: None of these
       required:
       - HEIGHT
       - WEIGHT_MALE

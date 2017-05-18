@@ -54,7 +54,17 @@ put:
     required: true
     description: ''
     schema:
-      $ref: '../swagger.yml#/definitions/ProductRequest'
+      title: UpdateExistingProduct
+      allOf:
+      - $ref: '../swagger.yml#/definitions/ProductRequest'
+      - properties:
+          livesAssured:
+            type: array
+            description: List of Customers (represented as object) for whom the Product is.
+            items:
+              $ref: '../swagger.yml#/definitions/LifeAssuredRequest'
+              example:
+                refersTo: '1001'
   responses:
     200:
       description: ''
