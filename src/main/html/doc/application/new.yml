@@ -21,6 +21,23 @@ post:
         $ref: '../swagger.yml#/definitions/Application'
     400:
       description: Unexpected error in API call. See HTTP response body for details.
+      schema:
+        title: CreateNewApplicationErrorResponse
+        properties:
+          customers:
+            type: array
+            example:
+            - referenceId: 'cus-001'
+              name:
+                errorMessage: "Value must be a valid name. Must start with a letter. Can contain letters (A to Z), hyphens (-), apostrophes (') and spaces."
+            items:
+              title: CustomerErrorResponse
+              type: object
+              properties:
+                referenceId:
+                  type: string
+                name:
+                  $ref: '../swagger.yml#/definitions/ErrorResponse'
   x-operation-settings:
     CollectParameters: false
     AllowDynamicQueryParameters: false

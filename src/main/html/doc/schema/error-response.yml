@@ -1,0 +1,5 @@
+title: ErrorResponse
+type: object
+properties:
+  errorMessage:
+    type: string

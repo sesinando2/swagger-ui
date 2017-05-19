@@ -283,7 +283,6 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     // Render status codes
     var statusCodeView = new SwaggerUi.Views.StatusCodeView({
       model: statusCode,
-      tagName: 'tr',
       router: this.router
     });
     $('.operation-status', $(this.el)).append(statusCodeView.render().el);

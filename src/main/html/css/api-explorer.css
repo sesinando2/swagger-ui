@@ -567,7 +567,18 @@
 .swagger-section .operation-status {
     background: #f8f8f9;
     color: #5c666f;
-    min-width: 320px
+    min-width: 320px;
+    width: 100%;
+}
+
+.swagger-section .operation-status .model-signature,
+.swagger-section .operation-status .model-signature > td {
+    display: block;
+    padding: 0 !important;
+}
+
+.swagger-section .operation-status .model-signature > td h4 {
+    padding: 10px 20px;
 }
 
 @media (min-width: 992px) {
@@ -577,7 +588,7 @@
 }
 
 .swagger-section .operation-status td {
-    width: auto;
+    width: 100%;
     vertical-align: middle;
     border-bottom: 1px solid #e8eaeb;
     line-height: 1.4;
@@ -1795,9 +1806,14 @@ body {
 }
 
 .swagger-section .swagger-ui-wrap .model-signature {
+    background-color: #5c666f;
     font-family: proxima-nova, sans-serif;
     font-size: 1em;
     line-height: 1.5em
+}
+
+.swagger-section .swagger-ui-wrap .model-signature td {
+    vertical-align: top;
 }
 
 .swagger-section .swagger-ui-wrap .model-signature .signature-nav a {

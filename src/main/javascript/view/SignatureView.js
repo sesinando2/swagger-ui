@@ -9,7 +9,11 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
   },
 
   render: function () {
-    $(this.el).html(Handlebars.templates.signature(this.model));
+    var template = 'signature';
+    if (this.model.template) {
+      template = this.model.template;
+    }
+    $(this.el).html(Handlebars.templates[template](this.model));
     this.isParam = this.model.isParam;
     return this;
   },

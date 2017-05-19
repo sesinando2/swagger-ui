@@ -341,3 +341,5 @@ definitions:
     $ref: ./schema/document-content.yml
   Message:
     $ref: ./schema/message.yml
+  ErrorResponse:
+    $ref: ./schema/error-response.yml

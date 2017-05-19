@@ -1,0 +1,25 @@
+<tr class="model-signature fullwidth">
+    <td colspan="2">
+        <div>
+            <h4 class="sample-title" data-control data-toggle="collapse"
+                data-target="#response-sample-{{id}}">{{type}} Sample</h4>
+            <div data-content class="collapse in" id="response-sample-{{id}}">
+                <div class="snippet">
+                    <pre><code>{{sampleJSON}}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        {{#if signature}}
+            <div>
+                <h4 class="schema-title collapsed" data-control data-toggle="collapse"
+                    data-target="#response-schema-{{id}}">{{type}} Schema</h4>
+                <div data-content class="collapse in" id="response-schema-{{id}}">
+                    <div class="description">
+                        {{{signature}}}
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    </td>
+</tr>
